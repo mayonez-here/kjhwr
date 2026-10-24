@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build:vercel": "vite build --outDir ../public --emptyOutDir",
+    "build:vercel": "vite build --outDir ../backend/static --emptyOutDir",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"

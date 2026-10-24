@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SNAPSHOT_PATH = Path(os.getenv("SNAPSHOT_PATH", ROOT / "data" / "snapshot.json"))
 # Built React app, served by FastAPI in the Docker image
 FRONTEND_DIST = Path(os.getenv("FRONTEND_DIST") or next(
-    (p for p in (ROOT / "frontend" / "dist", ROOT / "public") if p.exists()),
+    (p for p in (ROOT / "frontend" / "dist", ROOT / "backend" / "static") if p.exists()),
     ROOT / "frontend" / "dist",
 ))
 
