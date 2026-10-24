@@ -1,5 +1,5 @@
 {
   "functions": {
-    "api/index.py": { "includeFiles": "{backend,data}/**" }
+    "api/index.py": { "includeFiles": "{backend,data,public}/**" }
   }
 }

@@ -9,7 +9,10 @@ ROOT = Path(__file__).resolve().parents[2]
 # Pre-fetched Elexon data (see scripts/fetch_data.py)
 SNAPSHOT_PATH = Path(os.getenv("SNAPSHOT_PATH", ROOT / "data" / "snapshot.json"))
 # Built React app, served by FastAPI in the Docker image
-FRONTEND_DIST = Path(os.getenv("FRONTEND_DIST", ROOT / "frontend" / "dist"))
+FRONTEND_DIST = Path(os.getenv("FRONTEND_DIST") or next(
+    (p for p in (ROOT / "frontend" / "dist", ROOT / "public") if p.exists()),
+    ROOT / "frontend" / "dist",
+))
 
 # GB market time. January is GMT (= UTC) but we use the real zone so the logic is
 # still correct if someone points the app at a BST month.
